@@ -26,7 +26,7 @@
 
 #---------------------------------------------------------------------------
 from Foam import FOAM_VERSION, FOAM_REF_VERSION, FOAM_BRANCH_VERSION
-if FOAM_REF_VERSION( ">=", "010600" ):
+if FOAM_REF_VERSION( ">=", "010600" ) and FOAM_REF_VERSION( "<=", "010701" ) :
     from pimpleFlux.r1_6 import *
     pass
 
@@ -38,14 +38,20 @@ if FOAM_BRANCH_VERSION( "dev", ">=", "010600" ):
 
     
 #--------------------------------------------------------------------------------------
-if FOAM_VERSION( ">=", "020000" ):
+if FOAM_VERSION( "==", "020000" ):
     from pimpleFlux.r2_0_0 import *
     pass
 
     
 #--------------------------------------------------------------------------------------
-if FOAM_VERSION( ">=", "020100" ):
+if FOAM_VERSION( "==", "020100" ):
     from pimpleFlux.r2_1_0 import *
+    pass
+
+    
+#--------------------------------------------------------------------------------------
+if FOAM_VERSION( ">=", "020101" ):
+    from pimpleFlux.r2_1_1 import *
     pass
 
     
